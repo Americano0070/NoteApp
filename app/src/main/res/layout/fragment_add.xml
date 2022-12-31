@@ -14,8 +14,10 @@
         android:background="@android:color/transparent"
         android:ems="10"
         android:hint="Title"
-
         android:inputType="textPersonName"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +42,8 @@
         android:gravity="top|left"
         android:hint="Description"
         android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
