@@ -15,9 +15,9 @@ abstract class ToDoDataBase : RoomDatabase() {
         private var INSTANCE: ToDoDataBase? = null
 
         fun getDataBase(context: Context): ToDoDataBase {
-            val tempInstanse = INSTANCE
-            if (tempInstanse != null) {
-                return tempInstanse
+            val tempInstance = INSTANCE
+            if (tempInstance != null) {
+                return tempInstance
             }
             synchronized(this) {
                 val instance = Room.databaseBuilder(
