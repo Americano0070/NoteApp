@@ -18,7 +18,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             setHasOptionsMenu(true)
 
             nextButton.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_addFragment)
+                findNavController().navigate(R.id.action_homeFragment_to_updateFragment)
 
             }
         }
