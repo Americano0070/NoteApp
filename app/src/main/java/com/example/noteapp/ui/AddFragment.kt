@@ -15,18 +15,22 @@ import com.example.noteapp.R
 import com.example.noteapp.dataBase.Priority
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.FragmentAddBinding
+import com.example.noteapp.viewModel.SharedViewModel
 import com.example.noteapp.viewModel.ToDoViewModel
 
 class AddFragment : Fragment(R.layout.fragment_add) {
 
     private val binding: FragmentAddBinding by viewBinding()
     private val mToDoViewModel: ToDoViewModel by viewModels()
+    private val mSharedViewModel: SharedViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
 
+        binding.spinner.onItemSelectedListener = mSharedViewModel.listener
     }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_add, menu)
     }
@@ -35,16 +39,15 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         if (item.itemId == R.id.menu_save) {
             insertDataToDb()
         }
-        return super.
-        onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
     private fun insertDataToDb() {
-        val mTitle = binding.titleName.toString()
+        val mTitle = binding.titleName.text.toString()
         val mPriority = binding.spinner.selectedItem.toString()
-        val mDescription = binding.description.toString()
+        val mDescription = binding.description.text.toString()
 
-        val validation = verifyDataFromUser(mTitle, mDescription)
+        val validation = mSharedViewModel.verifyDataFromUser(mTitle, mDescription)
 
         if (validation) {
             //insert data to Database
@@ -52,7 +55,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             val newData = ToDoData(
                 0,
                 mTitle,
-                parsePriority(mPriority),
+                mSharedViewModel.parsePriority(mPriority),
                 mDescription
             )
             mToDoViewModel.insertData(newData)
@@ -64,27 +67,5 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         }
     }
 
-    // TextViewni tekshirish
-    private fun verifyDataFromUser(title: String, description: String): Boolean {
-        return if (TextUtils.isEmpty(title) || TextUtils.isEmpty(description)) {
-            false
-        } else !(title.isEmpty() || description.isEmpty())
-    }
-
-    // Parse Priority
-    private fun parsePriority(priority: String): Priority {
-        return when (priority) {
-            "High Priority" -> {
-                Priority.HIGH
-            }
-            "Medium Priority" -> {
-                Priority.MEDIUM
-            }
-            "Low Priority" -> {
-                Priority.LOW
-            }
-            else -> Priority.LOW
-        }
-    }
 
 }
