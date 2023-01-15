@@ -4,12 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
+
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.R
 import com.example.noteapp.dataBase.Priority
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.RowLayoutBinding
 import com.example.noteapp.ui.HomeFragmentDirections
+
 
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
@@ -51,6 +53,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
                 view.findNavController().navigate(action)
             }
 
+
         }
 
     }
@@ -63,11 +66,9 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(list[position])
-
     }
 
     override fun getItemCount(): Int = list.size
-
 
     fun setData(toDoData: List<ToDoData>) {
         this.list = toDoData
