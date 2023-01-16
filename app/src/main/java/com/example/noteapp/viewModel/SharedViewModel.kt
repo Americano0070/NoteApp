@@ -21,8 +21,6 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
     }
 
 
-
-
         val listener: AdapterView.OnItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
