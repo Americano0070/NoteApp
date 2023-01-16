@@ -1,7 +1,6 @@
 package com.example.noteapp.ui
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -12,7 +11,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.noteapp.R
-import com.example.noteapp.dataBase.Priority
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.FragmentAddBinding
 import com.example.noteapp.viewModel.SharedViewModel

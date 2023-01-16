@@ -60,7 +60,5 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
     // LifecycleScope
 
-
-    //implementation "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
-
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
 }

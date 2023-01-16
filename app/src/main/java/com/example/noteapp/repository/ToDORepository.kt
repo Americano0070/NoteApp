@@ -24,5 +24,4 @@ class ToDORepository(private val toDoDao: ToDoDao) {
         toDoDao.deleteAll()
     }
 
-
 }

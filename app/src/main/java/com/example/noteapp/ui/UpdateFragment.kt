@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.noteapp.R
-import com.example.noteapp.dataBase.Priority
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.FragmentUpdateBinding
 import com.example.noteapp.viewModel.SharedViewModel

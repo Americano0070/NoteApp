@@ -1,4 +1,4 @@
-package com.example.noteapp.dataBase
+package com.example.noteapp.dataBase.model
 
 enum class Priority {
     HIGH,

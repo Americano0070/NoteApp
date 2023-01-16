@@ -1,6 +1,7 @@
-package com.example.noteapp.dataBase
+package com.example.noteapp.repository
 
 import androidx.room.TypeConverter
+import com.example.noteapp.dataBase.model.Priority
 
 class Converter {
 

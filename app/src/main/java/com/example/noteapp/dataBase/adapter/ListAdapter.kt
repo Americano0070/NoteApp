@@ -1,17 +1,16 @@
-package com.example.noteapp.adapter
+package com.example.noteapp.dataBase.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
-
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.R
-import com.example.noteapp.dataBase.Priority
+import com.example.noteapp.dataBase.model.Priority
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.RowLayoutBinding
 import com.example.noteapp.ui.HomeFragmentDirections
-
 
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
@@ -45,17 +44,13 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
                         R.color.green
                     )
                 )
-
             }
 
             val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(toDoData)
             binding.layoutBackground.setOnClickListener { view ->
                 view.findNavController().navigate(action)
             }
-
-
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -71,8 +66,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     override fun getItemCount(): Int = list.size
 
     fun setData(toDoData: List<ToDoData>) {
+        val toDODiffUtill = ToDODiffUtill(list, toDoData)
+        val toDODiffUtillResult = DiffUtil.calculateDiff(toDODiffUtill)
         this.list = toDoData
-        notifyDataSetChanged()
+        toDODiffUtillResult.dispatchUpdatesTo(this)
     }
 
 }

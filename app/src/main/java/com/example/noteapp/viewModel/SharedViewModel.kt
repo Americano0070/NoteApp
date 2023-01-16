@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.noteapp.R
-import com.example.noteapp.dataBase.Priority
+import com.example.noteapp.dataBase.model.Priority
 import com.example.noteapp.dataBase.ToDoData
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {
@@ -19,8 +19,6 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
     fun checkIfDatabaseEmpty(toDoData: List<ToDoData>) {
         emptyDataBase.value = toDoData.isEmpty()
     }
-
-
 
 
         val listener: AdapterView.OnItemSelectedListener = object :
