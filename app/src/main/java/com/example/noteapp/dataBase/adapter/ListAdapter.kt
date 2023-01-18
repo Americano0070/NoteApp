@@ -1,4 +1,4 @@
-package com.example.noteapp.adapter
+package com.example.noteapp.dataBase.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,8 @@ import androidx.navigation.findNavController
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.R
-import com.example.noteapp.dataBase.Priority
 import com.example.noteapp.dataBase.ToDoData
+import com.example.noteapp.dataBase.model.Priority
 import com.example.noteapp.databinding.RowLayoutBinding
 import com.example.noteapp.ui.HomeFragmentDirections
 
