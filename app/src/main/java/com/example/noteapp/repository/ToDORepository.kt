@@ -8,6 +8,8 @@ import com.example.noteapp.dataBase.ToDoData
 class ToDORepository(private val toDoDao: ToDoDao) {
 
     val getAllData: LiveData<List<ToDoData>> = toDoDao.getAllData()
+    val sortByHighPriority: LiveData<List<ToDoData>> = toDoDao.sortByHighPriority()
+    val sortByLowPriority: LiveData<List<ToDoData>> = toDoDao.sortByLowPriority()
 
     suspend fun insertData(toDoData: ToDoData) {
         toDoDao.insert(toDoData)

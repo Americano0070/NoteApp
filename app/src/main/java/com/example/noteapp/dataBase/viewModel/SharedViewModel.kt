@@ -1,4 +1,4 @@
-package com.example.noteapp.viewModel
+package com.example.noteapp.dataBase.viewModel
 
 import android.app.Application
 import android.text.TextUtils

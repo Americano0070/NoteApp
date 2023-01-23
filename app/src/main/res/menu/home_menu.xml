@@ -21,11 +21,10 @@
                     android:id="@+id/menu_priority_high"
                     android:title="@string/priority_high" />
                 <item
-                    android:id="@+id/priority_low"
+                    android:id="@+id/menu_priority_low"
                     android:title="@string/priority_low" />
             </menu>
         </item>
-
         <item
             android:id="@+id/home_delete_all"
             android:title="Delete"

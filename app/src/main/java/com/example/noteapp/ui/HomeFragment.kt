@@ -17,8 +17,8 @@ import com.example.noteapp.R
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.FragmentHomeBinding
 import com.example.noteapp.repository.SwipeToDelete
-import com.example.noteapp.viewModel.SharedViewModel
-import com.example.noteapp.viewModel.ToDoViewModel
+import com.example.noteapp.dataBase.viewModel.SharedViewModel
+import com.example.noteapp.dataBase.viewModel.ToDoViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextListener {
@@ -123,6 +123,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home_delete_all -> deleteAllData()
+            R.id.menu_priority_high -> mToDoViewModel.sortByHighPriority.observe(this, Observer { adapter.setData(it) })
+            R.id.menu_priority_low -> mToDoViewModel.sortByLowPriority.observe(this, Observer { adapter.setData(it) })
         }
         return super.onOptionsItemSelected(item)
     }

@@ -11,8 +11,8 @@ import androidx.navigation.fragment.navArgs
 import com.example.noteapp.R
 import com.example.noteapp.dataBase.ToDoData
 import com.example.noteapp.databinding.FragmentUpdateBinding
-import com.example.noteapp.viewModel.SharedViewModel
-import com.example.noteapp.viewModel.ToDoViewModel
+import com.example.noteapp.dataBase.viewModel.SharedViewModel
+import com.example.noteapp.dataBase.viewModel.ToDoViewModel
 
 
 class UpdateFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.noteapp.viewModel
+package com.example.noteapp.dataBase.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -16,6 +16,8 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: ToDORepository = ToDORepository(toDoDao)
 
     val getAllData: LiveData<List<ToDoData>> = repository.getAllData
+    val sortByHighPriority: LiveData<List<ToDoData>> = repository.sortByHighPriority
+    val sortByLowPriority: LiveData<List<ToDoData>> = repository.sortByLowPriority
 
     fun insertData(toDoData: ToDoData) {
         viewModelScope.launch(Dispatchers.IO) {
